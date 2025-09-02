@@ -1,0 +1,24 @@
+{
+    "name": "iOS BookReader Development",
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "18"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.vscode-swift",
+                "sswg.swift-lang",
+                "ms-vscode.vscode-json",
+                "ms-vscode.vscode-yaml",
+                "ms-vscode.vscode-markdown"
+            ]
+        }
+    },
+    "postCreateCommand": "echo 'iOS development environment ready!'",
+    "remoteUser": "vscode"
+}
