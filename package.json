@@ -1,0 +1,84 @@
+{
+  "name": "streamflow",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@hookform/resolvers": "^3.3.2",
+    "@stripe/react-stripe-js": "^2.1.2",
+    "@stripe/stripe-js": "^2.1.11",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^8.3.0",
+    "cors": "^2.8.5",
+    "date-fns": "^2.30.0",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.0.1",
+    "firebase": "^10.7.1",
+    "framer-motion": "^10.16.4",
+    "helmet": "^8.1.0",
+    "hls.js": "^1.4.12",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.263.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.14.3",
+    "node-fetch": "^3.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.47.0",
+    "react-hot-toast": "^2.4.1",
+    "react-pdf": "^10.0.1",
+    "react-player": "^2.13.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "uuid": "^9.0.1",
+    "video.js": "^8.6.1",
+    "web-vitals": "^2.1.4",
+    "zod": "^3.22.4",
+    "zustand": "^4.4.6"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "node server.js",
+    "server-mysql": "node server-mysql.js",
+    "migrate-to-mysql": "node mysql-migration.js",
+    "setup-mysql": "npm run migrate-to-mysql && npm run server-mysql",
+    "setup-mysql-interactive": "node setup-mysql.js",
+    "test-mysql": "node test-mysql-connection.js",
+    "start-mysql": "node server-production.js",
+    "dev-mysql": "nodemon server-production.js",
+    "switch-to-mysql": "node switch-to-mysql.js",
+    "switch-to-sqlite": "node switch-to-sqlite.js",
+    "deploy-firebase": "node deploy-firebase-https.js",
+    "deploy-firebase-manual": "npm run build && firebase deploy --only hosting",
+    "firebase-login": "firebase login",
+    "firebase-init": "firebase init hosting",
+    "deploy-nginx": "node deploy-nginx-firebase.js",
+    "deploy-nginx-firebase": "node deploy-nginx-firebase.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
