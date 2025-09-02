@@ -21,6 +21,9 @@ struct ProfileView: View {
                     // Settings Section
                     SettingsSectionView()
                     
+                    // Firebase Test Button
+                    FirebaseTestButton()
+                    
                     // Sign Out Button
                     SignOutButton()
                 }
@@ -484,6 +487,33 @@ struct SettingsView: View {
                     }
                 }
             }
+        }
+    }
+}
+
+struct FirebaseTestButton: View {
+    @State private var showingFirebaseTest = false
+    
+    var body: some View {
+        Button(action: {
+            showingFirebaseTest = true
+        }) {
+            HStack {
+                Image(systemName: "flame.fill")
+                    .foregroundColor(.orange)
+                Text("Test Firebase Connection")
+                    .fontWeight(.medium)
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            .padding()
+            .background(Color(.systemGray6))
+            .cornerRadius(12)
+        }
+        .sheet(isPresented: $showingFirebaseTest) {
+            FirebaseTestView()
         }
     }
 }

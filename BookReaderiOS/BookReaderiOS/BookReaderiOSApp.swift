@@ -30,7 +30,28 @@ struct BookReaderiOSApp: App {
     
     private func setupFirebase() {
         // Firebase is already configured in init()
-        print("Firebase configured successfully")
+        print("🔥 Firebase configured successfully")
+        
+        // Test Firebase services
+        testFirebaseServices()
+    }
+    
+    private func testFirebaseServices() {
+        print("🔍 Testing Firebase services...")
+        
+        // Test Auth
+        let auth = Auth.auth()
+        print("✅ Auth service: \(auth.app != nil ? "Available" : "Failed")")
+        
+        // Test Firestore
+        let db = Firestore.firestore()
+        print("✅ Firestore service: \(db.app != nil ? "Available" : "Failed")")
+        
+        // Test Storage
+        let storage = Storage.storage()
+        print("✅ Storage service: \(storage.app != nil ? "Available" : "Failed")")
+        
+        print("🎯 Firebase test completed!")
     }
 }
 
