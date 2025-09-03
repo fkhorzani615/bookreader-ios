@@ -5,8 +5,10 @@
         "ghcr.io/devcontainers/features/git:1": {},
         "ghcr.io/devcontainers/features/github-cli:1": {},
         "ghcr.io/devcontainers/features/node:1": {
-            "version": "18"
-        }
+            "version": "20"
+        },
+        "ghcr.io/devcontainers/features/xcode:1": {},
+        "ghcr.io/devcontainers/features/swift:1": {}
     },
     "customizations": {
         "vscode": {
@@ -15,10 +17,20 @@
                 "sswg.swift-lang",
                 "ms-vscode.vscode-json",
                 "ms-vscode.vscode-yaml",
-                "ms-vscode.vscode-markdown"
-            ]
+                "ms-vscode.vscode-markdown",
+                "ms-vscode.vscode-xml",
+                "ms-vscode.vscode-shellscript",
+                "ms-vscode.vscode-git"
+            ],
+            "settings": {
+                "swift.path": "/usr/bin/swift",
+                "swift.buildPath": "/tmp/swift-build"
+            }
         }
     },
-    "postCreateCommand": "echo 'iOS development environment ready!'",
-    "remoteUser": "vscode"
+    "postCreateCommand": "echo '🚀 iOS development environment ready! Install Xcode command line tools if needed.'",
+    "remoteUser": "vscode",
+    "mounts": [
+        "source=${localWorkspaceFolder}/.devcontainer/scripts,target=/tmp/scripts,type=bind,consistency=cached"
+    ]
 }
